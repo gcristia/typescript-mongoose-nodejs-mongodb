@@ -1,2 +1,2 @@
 # Typescript + Mongoose ( Nodejs + MongoDB)
-Typescript y Mongoose (Nodejs &amp; Mongodb)
+Typegoose -> Typescript y Mongoose (Nodejs &amp; Mongodb)
