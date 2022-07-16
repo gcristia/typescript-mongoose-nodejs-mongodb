@@ -2,11 +2,11 @@ import { prop } from '@typegoose/typegoose'
 
 class User {
     @prop()
-    firstname
+    firstname: string
     @prop()
-    lastname
+    lastname: string
     @prop()
-    email
+    email: string
     @prop()
-    password
+    password: string
 }
