@@ -1,5 +1,4 @@
 import { connect } from 'mongoose'
-import User from './models/User'
 
 const connectDB = async () => {
     const db = await connect('mongodb://localhost/typegoosedb')
@@ -47,7 +46,6 @@ const executeQueries = async () => {
     console.log(roles)*/
     /* const product = await Product.findById('62d3511713200d41b5e5e639').populate('owner')
      console.log(product)*/
-
     /*const user = new User({
         firstname: 'John',
         lastname: 'Doe',
@@ -57,10 +55,21 @@ const executeQueries = async () => {
     })
 
     await user.save()*/
+    /*const user = await User.findById('62d3784f33fb3aaf03f87d20').populate('roles', 'name -_id')
+    console.log(user)*/
+    /*const result = await User.findByFirstname('Gustavo')
+    console.log(result)*/
+    /*const user = new User({
+        firstname: 'Nadia',
+        lastname: 'Doe',
+        email: 'prueba@gmail.com',
+        roles: ['62d3768d04568fa1bbded677', '62d3768d04568fa1bbded678'],
+    })
 
-    const user = await User.findById('62d3784f33fb3aaf03f87d20').populate('roles', 'name -_id')
+    user.password = user.encryptPassword('123456')
+    await user.save()
 
-    console.log(user)
+    console.log(user)*/
 }
 
 executeQueries()
