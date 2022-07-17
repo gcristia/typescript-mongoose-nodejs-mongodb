@@ -1,5 +1,4 @@
 import { connect } from 'mongoose'
-import User from './models/User'
 
 const connectDB = async () => {
     const db = await connect('mongodb://localhost/typegoosedb')
@@ -60,7 +59,7 @@ const executeQueries = async () => {
     console.log(user)*/
     /*const result = await User.findByFirstname('Gustavo')
     console.log(result)*/
-    const user = new User({
+    /*const user = new User({
         firstname: 'Nadia',
         lastname: 'Doe',
         email: 'prueba@gmail.com',
@@ -70,7 +69,7 @@ const executeQueries = async () => {
     user.password = user.encryptPassword('123456')
     await user.save()
 
-    console.log(user)
+    console.log(user)*/
 }
 
 executeQueries()
