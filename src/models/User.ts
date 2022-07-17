@@ -1,6 +1,14 @@
-import { getModelForClass, prop, Ref, ReturnModelType } from '@typegoose/typegoose'
+import { getModelForClass, post, pre, prop, Ref, ReturnModelType } from '@typegoose/typegoose'
 import { Role } from './Role'
+import bycrypt from 'bcryptjs'
 
+@pre<User>('save', function (this) {
+    this.firstname = this.firstname + ' algo'
+    this.password = bycrypt.hashSync(this.password, 10)
+})
+@post<User>('save', () => {
+    console.log('User Saved')
+})
 export class User {
     @prop({ required: true }) //mongoose
     firstname: string //typescript
