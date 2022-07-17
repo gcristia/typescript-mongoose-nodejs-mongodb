@@ -1,6 +1,7 @@
-import { getModelForClass, prop } from '@typegoose/typegoose'
+import { getModelForClass, prop, Ref } from '@typegoose/typegoose'
 import { Comment } from './Comment'
 import { v4 as uuidv4 } from 'uuid'
+import { User } from './User'
 
 class Product {
     @prop({ type: String, required: true, trim: true })
@@ -20,6 +21,9 @@ class Product {
 
     @prop({ type: () => [Comment] })
     comments: Comment[]
+
+    @prop({ ref: () => User })
+    owner: Ref<User>
 }
 
 const ProductModel = getModelForClass(Product)
